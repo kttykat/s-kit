@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap");
 @import url(./utils.css);
 
 :root {
@@ -16,7 +16,7 @@
 
   --rounded-full: 9999px;
   --font-inter: "Inter", sans-serif;
-  --font-mono: 'Fragment Mono', monospace;
+  --font-mono: "Fragment Mono", monospace;
 }
 
 * {
@@ -39,25 +39,25 @@ body {
   padding-right: 2rem;
 }
 
-
 *::-webkit-scrollbar {
- display: none;
+  display: none;
 }
 
 .default_item {
   background-color: var(--foreground);
   border: 1px solid var(--overlay);
   outline: none;
-  padding: .3rem .5rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 6px;
 }
 
 .link {
   color: var(--accent-main);
-  transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   text-decoration: none;
   opacity: 1 !important;
 }
+
 .link:hover {
   text-decoration: underline solid var(--accent-main);
 }

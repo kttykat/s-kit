@@ -1,14 +1,27 @@
 import { AppPropsType } from "next/dist/shared/lib/utils";
-import "../styles/globals.css";
+import { layoutHandler } from "../lib/handler";
 import Toast from "../ui/Toast";
+import "../styles/globals.css";
 
-export default function MyApp({ Component, ...pageProps }: AppPropsType) {
-  return (
+export default function MyApp({
+  Component,
+  router,
+  ...pageProps
+}: AppPropsType) {
+  const layout = layoutHandler(router.pathname);
+  const _ = () => (
     <>
-      <div className="window">
-        <Toast/>
-        <Component />
-      </div>
+      <Toast />
+      <Component {...pageProps} />
+    </>
+  );
+  return layout ? (
+    <>
+      <layout.Layout>{_()}</layout.Layout>
+    </>
+  ) : (
+    <>
+      <div className="window">{_()}</div>
     </>
   );
 }

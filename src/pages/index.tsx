@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import createListner from "../lib/hooks/createListner";
 import storeActive from "../lib/hooks/storeActive";
 import Box from "../ui/Box";
 import Button from "../ui/Button";
@@ -14,12 +15,12 @@ import { toggleToast } from "../ui/Toast";
 
 interface Props {}
 const RootPage = ({}: Props) => {
+  const { value: passwordOrNah, reverseState: reversePasswordOrNah } =
+    storeActive(false);
   const [name, setName] = useState("");
   const [code, setCode] = useState(
     `// Code Block\nconsole.log("Hello world!")`
   );
-  const { value: passwordOrNah, reverseState: reversePasswordOrNah } =
-    storeActive(false);
   return (
     <>
       <h1>Saige's Kit</h1>
@@ -119,32 +120,33 @@ const RootPage = ({}: Props) => {
             Button (smol)
           </Button>
         </div>
-        <div
-          className="flex"
-          style={{ marginTop: ".5rem" }}
-        >
+        <div className="flex" style={{ marginTop: ".5rem" }}>
           <Dropdown
             toggler={{
-              text: "Hello world?",
+              text: "Dropdown + Layout Links",
             }}
             items={[
-              { name: "Documentation", keybind: "ctrl+d", href: "/test" },
-              { name: "Users" },
+              { name: "Example Layout", href: "/layouts" },
+              {
+                name: "Filler",
+                keybind: "ctrl+x",
+                onClick: () => {
+                  toggleToast("Filler dropdown item interacted with");
+                },
+              },
             ]}
           />
         </div>
         <div className="flex" style={{ marginTop: ".5rem" }}>
-          <TextArea
-            mono
-            setValue={setCode}
-            value={code}
-          />
+          <TextArea mono setValue={setCode} value={code} />
         </div>
         <Code code={code} language="javascript" />
       </div>
-      <Box style={{ marginTop: ".5rem"}}>
+      <Box style={{ marginTop: ".5rem" }}>
         <h3>This is a box</h3>
-        <p>Its just a simple HTML div with some styling and position relative.</p>
+        <p>
+          Its just a simple HTML div with some styling and position relative.
+        </p>
       </Box>
     </>
   );

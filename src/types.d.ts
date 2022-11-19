@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 
 export type O<T = any> = {
   [key: string]: T;
@@ -8,6 +8,16 @@ export type ClickEvent<T = HTMLDivElement> = MouseEvent<
   T,
   globalThis.MouseEvent
 >;
+
+export type Layout = {
+  prefix: string;
+  filter?: (path: string) => boolean;
+  Layout: ({ children }: LayoutProps) => JSX.Element
+}
+
+export type LayoutProps = {
+  children: React.ReactNode;
+}
 
 export type DefaultUIProps<T = HTMLDivElement> = {
   className?: string;
@@ -20,7 +30,7 @@ export type DropdownItem = {
   href?: string;
   keybind?: string;
   icon?: JSX.Element;
-  onClick?: (e) => any
+  onClick?: (e) => any;
 }
 
 export type InputTypes =

@@ -1,0 +1,8 @@
+.codeLine {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  padding: .15rem .3rem;
+  display: inline;
+  border-radius: 6px;
+  width: fit-content;
+}

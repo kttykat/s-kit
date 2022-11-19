@@ -4,12 +4,12 @@
   padding: .2rem .4rem;
   border-radius: var(--rounded-full);
   cursor: pointer;
-  width: 64px;
+  width: 50px;
 }
 
 .switch .i {
-  width: 20px;
-  height: 19px;
+  width: 15px;
+  height: 15px;
   border-radius: var(--rounded-full);
   background-color: var(--overlay);
   margin-left: 0;
@@ -18,5 +18,5 @@
 
 .switch.a .i {
   background-color: var(--accent-main);
-  margin-left: 56%;
+  margin-left: 70%;
 }
