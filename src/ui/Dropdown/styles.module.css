@@ -51,13 +51,14 @@
   background-color: var(--foreground);
   border: 1px solid var(--overlay);
   outline: none;
-  padding: .15rem;
+  padding: .25rem;
   border-radius: 6px;
   top: 150%;
   min-width: 225px;
   width: fit-content;
   z-index: 9999;
   display: flex;
+  align-items: center;
   flex-direction: column;
   row-gap: .25rem;
   opacity: 0;
@@ -71,7 +72,7 @@
   background-color: var(--foreground);
   outline: none;
   height: 34px;
-  padding: 0rem .3rem;
+  padding: .3rem;
   border-radius: 6px;
   display: flex;
   align-items: center;

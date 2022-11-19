@@ -15,14 +15,19 @@ const Dropdown = ({ items, toggler, className, onClick, style }: Props) => {
   items.forEach((item) => {
     if (item.keybind) {
       const ctrl = item.keybind.includes("ctrl");
+      const shift = item.keybind.includes("shift");
       createListner(
         () => {
           if (item.onClick) {
             item.onClick(null);
           }
         },
-        item.keybind.replaceAll("ctrl", "").replaceAll("+", ""),
-        ctrl
+        item.keybind
+          .replaceAll("ctrl", "")
+          .replaceAll("shift", "")
+          .replaceAll("+", ""),
+        ctrl,
+        shift
       );
     }
   });

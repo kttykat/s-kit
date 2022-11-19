@@ -15,6 +15,7 @@ export default function MyApp({
       <Component {...pageProps} />
     </>
   );
+  
   return layout ? (
     <>
       <layout.Layout>{_()}</layout.Layout>

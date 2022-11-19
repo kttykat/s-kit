@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export default (cb: () => any, key?: string, ctrl?: boolean, a?: any[]) => {
+export default (cb: () => any, key?: string, ctrl?: boolean, shift?: boolean, a?: any[]) => {
   return useEffect(() => {
     if(typeof window === undefined) {
       return
@@ -10,13 +10,20 @@ export default (cb: () => any, key?: string, ctrl?: boolean, a?: any[]) => {
         const _ = () => { if(ev.key.toLowerCase() === key.toLowerCase()) {
           cb()
         }}
-        if(ctrl) {
-          if(ev.ctrlKey) {
-            _()
-          }
-        } else {
+        const shifted = ev.shiftKey;
+        const ctrled = ev.ctrlKey
+        if((ctrl && shift) && (ctrled && shifted)) {
           _()
         }
+        if(ctrl && ctrled) {
+          _()
+        }
+        if(shift && shifted) {
+          _()
+        }
+        if(!ctrl && !shifted) {
+          _()
+        } 
       }
     } else {
       cb()
