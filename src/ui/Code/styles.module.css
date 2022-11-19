@@ -1,0 +1,38 @@
+.code {
+  background-color: var(--foreground);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--overlay);
+  position: relative;
+}
+
+.code .copy {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 100%;
+  margin-top: .15rem;
+  margin-left: -2rem;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  border: 1px solid var(--overlay);
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: .4rem;
+  cursor: pointer;
+}
+
+.code pre {
+  padding: 0 !important;
+  overflow-y: scroll;
+}
+.code pre, .code pre code, .code pre code span {
+  background-color: transparent !important;
+  font-family: var(--font-mono) !important;
+}
+

@@ -1,0 +1,29 @@
+.input input {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  outline: none;
+  color: var(--text);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.input input:active,
+.input input:focus {
+  background-color: var(--overlay);
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.input .show {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  color: var(--text);
+  padding: 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+}

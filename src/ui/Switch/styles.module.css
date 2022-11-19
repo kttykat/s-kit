@@ -1,0 +1,22 @@
+.switch {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  padding: .2rem .4rem;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  width: 64px;
+}
+
+.switch .i {
+  width: 20px;
+  height: 19px;
+  border-radius: var(--rounded-full);
+  background-color: var(--overlay);
+  margin-left: 0;
+  transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.switch.a .i {
+  background-color: var(--accent-main);
+  margin-left: 56%;
+}

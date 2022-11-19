@@ -1,0 +1,14 @@
+.icon {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  outline: none;
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+.icon.point {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+.icon.point:hover {
+  background-color: var(--overlay);
+}

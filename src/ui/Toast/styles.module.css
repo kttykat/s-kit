@@ -1,0 +1,29 @@
+.toast {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  outline: none;
+  position: fixed;
+  z-index: 9999;
+  padding: .3rem .5rem;
+  border-radius: 6px;
+  margin-right: 1rem;
+  top: 6%;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.toast.a {
+  opacity: 1;
+  pointer-events: all;
+  top: 3%;
+  left: auto;
+  right: 0;
+  bottom: 0;
+}
