@@ -3,17 +3,12 @@
   border: 1px solid var(--overlay);
   text-decoration: none;
   color: var(--text);
-  padding: .4rem .75rem;
+  padding: .3rem .5rem;
   cursor: pointer;
   border-radius: 6px;
   transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-
-.button.sm {
-  font-size: 14px;
-  padding: .3rem .5rem;
-}
 
 .button:hover {
   background-color: var(--overlay);

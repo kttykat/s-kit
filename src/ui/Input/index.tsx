@@ -6,6 +6,7 @@ type Props = {
   type?: InputTypes;
   placeholder?: string;
   valueFilter?: (value: string) => string;
+  afterSet?: (z: string) => any;
   setValue: Dispatch<SetStateAction<string>>;
 } & DefaultUIProps;
 const Input = ({
@@ -16,6 +17,7 @@ const Input = ({
   placeholder,
   valueFilter,
   setValue,
+  afterSet,
 }: Props) => {
   const [show, setShow] = useState(false);
   return (
@@ -24,6 +26,9 @@ const Input = ({
         onChange={(e) => {
           let h = valueFilter ? valueFilter(e.target.value) : e.target.value;
           setValue(h);
+          if (afterSet) {
+            afterSet(h);
+          }
         }}
         type={type ? (type === "password" && show ? "text" : type) : "text"}
         placeholder={placeholder || "..."}

@@ -9,9 +9,17 @@ import useExtendedEffect from "../../lib/hooks/useExtendedEffect";
 type Props = {
   code: string;
   language: string;
+  fileName?: string;
 } & DefaultUIProps;
 
-const Code = ({ code, className, onClick, style, language }: Props) => {
+const Code = ({
+  code,
+  className,
+  onClick,
+  style,
+  language,
+  fileName,
+}: Props) => {
   const [copied, setCopied] = useState(false);
   useExtendedEffect(() => {
     if (copied) {
@@ -23,9 +31,18 @@ const Code = ({ code, className, onClick, style, language }: Props) => {
   return (
     <div className={`${styles.code} ${className}`} style={style}>
       <div className={styles.main}>
-        <SyntaxHighlighter showLineNumbers language={language} style={theme}>
-          {code.trim()}
-        </SyntaxHighlighter>
+        {fileName ? (
+          <div className={styles.fileName}>
+            <p>{fileName}</p>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={styles.space}>
+          <SyntaxHighlighter showLineNumbers language={language} style={theme}>
+            {code.trim()}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div
         className={styles.copy}

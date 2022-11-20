@@ -2,6 +2,7 @@ import { AppPropsType } from "next/dist/shared/lib/utils";
 import { layoutHandler } from "../lib/handler";
 import Toast from "../ui/Toast";
 import "../styles/globals.css";
+import CMDK from "../ui/CMDK";
 
 export default function MyApp({
   Component,
@@ -15,7 +16,7 @@ export default function MyApp({
       <Component {...pageProps} />
     </>
   );
-  
+
   return layout ? (
     <>
       <layout.Layout>{_()}</layout.Layout>

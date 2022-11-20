@@ -1,0 +1,117 @@
+.cmdk {
+  width: 500px;
+}
+
+.cmdk .bg {
+  position: fixed;
+  z-index: 9998;
+  inset: 0;
+  background: var(--blurable-shadow);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  pointer-events: none;  
+  opacity: 0;
+  cursor: pointer;
+}
+
+.cmdk .bg.a {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cmdk .component {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay);
+  outline: none;
+  height: fit-content;
+  min-width: 360px;
+  max-width: 500px;
+  padding: .25rem;
+  min-height: 100px;
+  max-height: 370px;
+  border-radius: 6px;
+  top: 55%;
+  left: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cmdk .component.a {
+  top: 50%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cmdk .component .input input {
+  background-color: var(--foreground-secondary);
+  border: 1px solid var(--overlay-secondary);
+  width: 100%;
+}
+
+.cmdk .component .list {
+   margin-top: .5rem;
+   max-height: 80%;
+   display: flex;
+   flex-direction: column;
+   gap: .2rem;
+   height: 310px;
+   overflow-y: scroll;
+}
+
+.cmdk .component .list .nofound {
+  text-align: center;
+}
+
+.cmdk .component .list .item {
+  background-color: transparent;
+  padding: .5rem;
+  border-radius: 6px;
+  transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cmdk .component .list .item .full {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.cmdk .component .list .item .full .icon {
+  background-color: var(--foreground-secondary);
+  border: 1px solid var(--overlay-secondary);
+  transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cmdk .component .list .item.a .full .icon {
+  background-color: var(--foreground);
+  border: 1px solid var(--overlay-secondary);
+}
+
+.cmdk .component .list .item:hover,
+.cmdk .component .list .item.a {
+  background-color: var(--foreground-secondary);
+  border: 1px solid var(--overlay-secondary);
+}
+
+.cmdk .component .list .item .content h4 {
+  font-size: 14px;
+}
+
+.cmdk .component .list .item .content p {
+  font-size: 14px;
+  margin-top: .25rem;
+  opacity: .8;
+}

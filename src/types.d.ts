@@ -33,6 +33,15 @@ export type DropdownItem = {
   onClick?: (e) => any;
 }
 
+
+export type CMDKOption = {
+  name: string;
+  icon?: JSX.Element;
+  description?: string;
+  href?: string;
+}
+
+
 export type InputTypes =
 | 'button'
 | 'checkbox'

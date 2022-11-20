@@ -1,0 +1,42 @@
+.badge {
+  background-color: var(--bg);
+  border: 1px solid var(--b);
+  padding: .1rem .5rem;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: fit-content;
+}
+
+.badge.p {
+  cursor: pointer;
+}
+
+.badge.h:hover {
+  background-color: var(--b);
+}
+
+.badge.default {
+  --bg: var(--foreground);
+  --b: var(--overlay);
+}
+
+.badge.error {
+  --bg: var(--accent-error);
+  --b: var(--accent-error-overlay);
+}
+
+.badge.info {
+  --bg: var(--accent-info);
+  --b: var(--accent-info-overlay);
+}
+
+.badge.warning {
+  --bg: var(--accent-warning);
+  --b: var(--accent-warning-overlay);
+}
+
+.badge.success {
+  --bg: var(--accent-success);
+  --b: var(--accent-success-overlay);
+}

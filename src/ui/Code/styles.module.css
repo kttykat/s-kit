@@ -1,6 +1,5 @@
 .code {
   background-color: var(--foreground);
-  padding: 0rem 0.5rem 0rem 0.5rem;
   border-radius: 6px;
   border: 1px solid var(--overlay);
   position: relative;
@@ -36,4 +35,22 @@
 .code pre code span {
   background-color: transparent !important;
   font-family: var(--font-mono) !important;
+}
+
+
+.code .main .fileName {
+  margin-bottom: .5rem;
+  background-color: var(--overlay);
+  width: 100%;
+  padding: .5rem;
+}
+
+.code .main .fileName p {
+  opacity: .8;
+}
+
+
+.code .main .space {
+  margin-left: .5rem;
+  margin-right: .5rem;
 }

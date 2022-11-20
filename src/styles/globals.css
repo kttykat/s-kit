@@ -4,6 +4,7 @@
 
 :root {
   --background: #0c0c0d;
+  --blurable-shadow: rgba(0, 0, 0, 0.8);
   --foreground: #121214;
   --overlay: #18181b;
   --foreground-secondary: #1f1f23;
@@ -13,6 +14,15 @@
   --text-gray: #c2c2c2;
 
   --accent-main: #fab4c6;
+
+  --accent-info: #5c77ef;
+  --accent-info-overlay: #4361ee;
+  --accent-error: #bc4749;
+  --accent-error-overlay: #b00104;
+  --accent-warning: #fb8500;
+  --accent-warning-overlay: #e76f51;
+  --accent-success: #4c956c;
+  --accent-success-overlay: #33744f;
 
   --rounded-full: 9999px;
   --font-inter: "Inter", sans-serif;

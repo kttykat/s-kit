@@ -1,32 +1,43 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
+// need to fix 
 
-export default (cb: () => any, key?: string, ctrl?: boolean, shift?: boolean, a?: any[]) => {
+export default (
+  cb: () => any,
+  key: string,
+  ctrl: boolean = false,
+  shift: boolean = false,
+) => {
   return useEffect(() => {
-    if(typeof window === undefined) {
-      return
+    if (typeof window === undefined) {
+      return;
     }
-    if(key) {
+    if (key) {
       document.onkeydown = (ev) => {
-        const _ = () => { if(ev.key.toLowerCase() === key.toLowerCase()) {
-          cb()
-        }}
+        const _ = () => {
+          console.log(ev.key, key)
+          if (ev.key.toLowerCase() === key.toLowerCase()) {
+            console.log("ran", ev.key);
+            cb();
+          }
+        };
         const shifted = ev.shiftKey;
-        const ctrled = ev.ctrlKey
-        if((ctrl && shift) && (ctrled && shifted)) {
-          _()
+        const ctrled = ev.ctrlKey;
+        if ((ctrl && !ctrled) && (!shift && !shifted)) {
+          _();
+        } else {
+          if ((ctrl && shift) && (ctrled && shifted)) {
+            _();
+          }
+          if (ctrl && ctrled) {
+            _();
+          }
+          if (shift && shifted) {
+            _();
+          }
         }
-        if(ctrl && ctrled) {
-          _()
-        }
-        if(shift && shifted) {
-          _()
-        }
-        if(!ctrl && !shifted) {
-          _()
-        } 
-      }
+      };
     } else {
-      cb()
+      cb();
     }
-  }, a)
-}
+  });
+};

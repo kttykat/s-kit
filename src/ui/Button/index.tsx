@@ -5,12 +5,11 @@ import styles from "./styles.module.css";
 type Props = {
   children: string;
   href?: string;
-  type?: "sm";
 } & DefaultUIProps<HTMLAnchorElement>;
-const Button = ({ className, type, style, children, href, onClick }: Props) => {
+const Button = ({ className, style, children, href, onClick }: Props) => {
   return (
     <a
-      className={`${className} ${type ? styles[`${type}`] : ""} ${styles.button}`}
+      className={`${className} ${styles.button}`}
       style={style}
       onClick={(e) => {
         if (href) {

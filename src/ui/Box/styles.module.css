@@ -2,7 +2,7 @@
   background-color: var(--foreground);
   border: 1px solid var(--overlay);
   outline: none;
-  padding: .3rem .5rem;
+  padding: .5rem;
   border-radius: 6px;
   position: relative;
 }
