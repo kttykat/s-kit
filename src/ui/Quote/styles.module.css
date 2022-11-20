@@ -1,14 +1,15 @@
 .quote {
   position: relative;
-  margin-left: .75rem;
+  margin-left: 25px;
   padding-top: .5rem;
   padding-bottom: .5rem;
+  width: 100%;
 }
 
 .quote::before {
   content: "";
   position: absolute;
-  left: -1.5%;
+  left: -25px;
   right: 100%;
   bottom: 0;
   top: 0;

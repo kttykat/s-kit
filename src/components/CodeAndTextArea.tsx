@@ -11,15 +11,17 @@ const CodeAndTextArea = ({}: Props) => {
     `// Code Block\nconsole.log("Hello world!")`
   );
   return (
-   <>
-   <h3 style={{ marginBottom: "0.5rem", opacity: "0.6"}}>Code blocks & Text areas</h3>
-    <DivLayout>
+    <>
+      <h3 style={{ marginBottom: "0.5rem", opacity: "0.6" }}>
+        Code blocks & Text areas
+      </h3>
+      <DivLayout>
         <DivLayout spacing>
           <TextArea mono setValue={setCode} value={code} />
         </DivLayout>
         <Code fileName="write_above.js" code={code} language="javascript" />
-    </DivLayout>
-   </>
+      </DivLayout>
+    </>
   );
 };
 
